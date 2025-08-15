@@ -1,0 +1,18 @@
+class Solution {
+    public int rob(int[] nums) {
+        int number = nums.length; 
+        int dp[] = new int[number+1]; 
+
+        Arrays.fill(dp,0); 
+        dp[1] = nums[0]; 
+
+        for (int i = 1; i < number; i++)
+        {
+            int notCount = dp[i]; 
+            int count = nums[i] + dp[i-1]; 
+            dp[i+1] = Math.max(count,notCount); 
+        }
+
+        return dp[number]; 
+    }
+}
