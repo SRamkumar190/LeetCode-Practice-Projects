@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class LabProgram {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      long phoneNumber;
+      // Add more variables as needed
+
+      phoneNumber = scnr.nextLong();
+      /* Type your code here. */
+
+      long areaCode = phoneNumber / 10000000; 
+      long lineNumber = phoneNumber % 10000; 
+      long middleNumbers = (phoneNumber / 10000) % 1000; 
+
+      System.out.println("(" + areaCode + ")" + " " + middleNumbers + "-" + lineNumber); 
+   }
+}
