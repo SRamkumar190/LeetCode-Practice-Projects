@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class LabProgram {
+   
+   /* Define your method here */
+   public static void swapValues(int[] values)
+   {
+       int temp = values[0]; 
+       values[0] = values[1]; 
+       values[1] = temp; 
+
+       int placeHolder = values[2]; 
+       values[2] = values[3]; 
+       values[3] = placeHolder; 
+   }
+   
+   public static void main(String[] args) {
+      /* Type your code here. */
+      Scanner scnr = new Scanner(System.in); 
+      int[] userValues = new int[4]; 
+
+      for(int i = 0; i < userValues.length; i++)
+      {
+        userValues[i] = scnr.nextInt(); 
+      }
+
+    swapValues(userValues); 
+
+     for (int i = 0; i < userValues.length; i++)
+     {
+        System.out.print(userValues[i]); 
+        if (i < userValues.length - 1)
+        {
+            System.out.print(" "); 
+        }
+     }
+     System.out.println(); 
+
+    scnr.close(); 
+   }
+}
