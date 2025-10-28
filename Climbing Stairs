@@ -1,0 +1,23 @@
+class Solution {
+    public int climbStairs(int n) {
+        if (n <= 0) {
+            return 0; // Or handle as an invalid input, depending on problem constraints.
+        }
+        if (n == 1) {
+            return 1;
+        }
+
+        // Initialize variables for the number of ways to reach the previous two steps
+        int first = 1; // Ways to reach step 1
+        int second = 2; // Ways to reach step 2
+
+        // Iterate from step 3 up to n
+        for (int i = 3; i <= n; i++) {
+            int current = first + second; // Ways to reach current step
+            first = second; // Update first to be the ways to reach the previous step
+            second = current; // Update second to be the ways to reach the current step
+        }
+
+        return second; // The number of ways to reach step n
+    }
+}
